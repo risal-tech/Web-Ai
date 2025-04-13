@@ -1,0 +1,22 @@
+document.getElementById("sendButton").addEventListener("click", function() {
+    const userInput = document.getElementById("userInput").value;
+    if (userInput.trim() === "") return;
+
+    // Display the user's message
+    const userMessage = document.createElement("div");
+    userMessage.classList.add("chat-message", "user-message");
+    userMessage.textContent = userInput;
+    document.getElementById("chatBox").appendChild(userMessage);
+
+    // Clear input field
+    document.getElementById("userInput").value = "";
+
+    // Simulate AI response (replace with real AI call if needed)
+    const botResponse = document.createElement("div");
+    botResponse.classList.add("chat-message", "bot-message");
+    botResponse.textContent = "Ini adalah respons dari AI: " + userInput;
+    document.getElementById("chatBox").appendChild(botResponse);
+
+    // Scroll to the bottom of the chat
+    document.getElementById("chatBox").scrollTop = document.getElementById("chatBox").scrollHeight;
+});
